@@ -1,0 +1,37 @@
+<template>
+  <div>
+    <span id="element"></span>
+  </div>
+</template>
+<style>
+    body{
+        background-color:#ff0000;
+    }
+    .ityped-cursor {
+      font-size: 2.2rem;
+      opacity: 1;
+      -webkit-animation: blink 0.3s infinite;
+      -moz-animation: blink 0.3s infinite;
+      animation: blink 0.3s infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes blink {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @-webkit-keyframes blink {
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes blink {
+        100% {
+            opacity: 0;
+        }
+    }
+
+</style>
