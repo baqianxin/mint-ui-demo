@@ -12,6 +12,7 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    "quotes": ["off", "double", { "avoidEscape": true }],//双引号定义字符串,允许模板字符串
     "semi-spacing": [0, {"before": false, "after": true}],//分号前后空格
     "sort-vars": 0,//变量声明时排序
     "space-after-keywords": [0, "always"],//关键字后面是否要空一格
