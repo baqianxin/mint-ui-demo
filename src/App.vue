@@ -1,69 +1,44 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div class="page-toast">
-      <Mityped></Mityped>
-      <MEchartsPi></MEchartsPi>
-      <div class="page-toast-wrapper">
-        <mt-button @click.native="openToast" size="large">Toast</mt-button>
-        <mt-button @click.native="openToastWithIcon" size="large">带有 icon 的 Toast</mt-button>
-        <mt-button @click.native="openBottomToast" size="large">自定义 Toast 位置</mt-button>
-      </div>
-    </div>
     <mt-cell
       title=""
-      to="//oom-cc.com"
+      to="/home"
       is-link
       value="oom-cc">
     </mt-cell>
-    <hello></hello>
+    <mt-cell
+      title=""
+      to="/about"
+      is-link
+      value="oom-cc">
+    </mt-cell>
+    <div class="main">
+      <!-- 路由匹配到的组件将渲染在这里 -->
+      <router-view></router-view>
+    </div>
   </div>
 </template>
-<script type="text/babel">
-  import {Toast} from 'mint-ui';
-  import Hello from './components/Hello';
-  import Mityped from './components/Mityped';
-  import MEchartsPi from './components/MEchartsPi';
 
-  export default {
-    components: {
-      Hello,
-      Mityped,
-      MEchartsPi
-    },
-    mounted (){
-      console.log('App');
-    },
-    methods: {
-      openToast () {
-        Toast('Message');
-      },
+<script>
+// import Hello from './components/Hello'
 
-      openToastWithIcon () {
-        Toast({
-          message: 'Success',
-          iconClass: 'mintui mintui-success'
-        });
-      },
+export default {
+  name: 'app',
+  components: {
+    // Hello
+  }
+};
 
-      openBottomToast () {
-        Toast({
-          message: 'Toast',
-          position: 'bottom'
-        });
-      }
-    }
-  };
 </script>
 
-
 <style>
-#app {
+body{
+  background-color: #f8f8ff;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.main{
+  width:100%;
+  height: auto;
 }
 </style>

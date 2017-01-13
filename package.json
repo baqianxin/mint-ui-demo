@@ -15,7 +15,10 @@
   "dependencies": {
     "ityped": "0.0.6",
     "mint-ui": "^2.1.0",
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-resource": "^1.0.3",
+    "vue-route": "^1.5.1",
+    "vue-router": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

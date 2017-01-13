@@ -1,6 +1,8 @@
 <template>
   <div class="MEchartsPi">
     <div id="MEchartsPi" class="main"></div>
+    <div id="MEchartsPi1" class="main"></div>
+    <div id="MEchartsPi2" class="main"></div>
   </div>
 </template>
 <script>
@@ -11,6 +13,8 @@
     mounted (){
      // 基于准备好的dom，初始化echarts实例
       var myChart = init(document.getElementById('MEchartsPi'));
+      var myChart1 = init(document.getElementById('MEchartsPi1'));
+      var myChart2 = init(document.getElementById('MEchartsPi2'));
       var data = [];
       for (var i = 0; i <= 360; i++) {
         var t = i / 180 * Math.PI;
@@ -51,6 +55,8 @@
       };
       // 绘制图表
       myChart.setOption(option);
+      myChart1.setOption(option);
+      myChart2.setOption(option);
     }
   };
 
