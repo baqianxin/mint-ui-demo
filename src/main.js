@@ -19,7 +19,10 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   base: __dirname,
+  hashbang: true,
   history: true,
+  saveScrollPosition: true,
+  transitionOnLoad: true,
   routes
 });
 

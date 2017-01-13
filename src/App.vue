@@ -1,21 +1,27 @@
 <template>
   <div id="app">
-    <mt-cell
-      title=""
-      to="/home"
-      is-link
-      value="oom-cc">
-    </mt-cell>
-    <mt-cell
-      title=""
-      to="/about"
-      is-link
-      value="oom-cc">
-    </mt-cell>
     <div class="main">
       <!-- 路由匹配到的组件将渲染在这里 -->
       <router-view></router-view>
     </div>
+    <!--<mt-tabbar :selected.sync="selected" fixed>-->
+        <!--<mt-tab-item id="主页" v-href="index" >-->
+          <!--<img slot="icon" src="./assets/100x100.png">-->
+          <!--外卖-->
+        <!--</mt-tab-item>-->
+      <!--<mt-tab-item id="发现" href="home">-->
+        <!--<img slot="icon" src="./assets/100x100.png">-->
+        <!--订单-->
+      <!--</mt-tab-item>-->
+      <!--<mt-tab-item id="精选" href="select">-->
+        <!--<img slot="icon" src="./assets/100x100.png">-->
+        <!--发现-->
+      <!--</mt-tab-item>-->
+      <!--<mt-tab-item id="关于" v-href="linkAbout" is-link>-->
+        <!--<img slot="icon" src="./assets/100x100.png">-->
+        <!--我的-->
+      <!--</mt-tab-item>-->
+    <!--</mt-tabbar>-->
   </div>
 </template>
 
@@ -24,6 +30,12 @@
 
 export default {
   name: 'app',
+  data () {
+    return {
+      selected: true,
+      linkAbout: '/about'
+    };
+  },
   components: {
     // Hello
   }
