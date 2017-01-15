@@ -23,8 +23,8 @@ body {
 
 /*= common css to all effects =*/
 .single-member {
-  width: auto;
-  float: left;
+  width: 95%;
+  /*float: left;*/
   margin: 15px 2.5%;
   background-color: #fff;
   text-align: center;
