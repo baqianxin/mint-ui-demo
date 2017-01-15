@@ -1,0 +1,22 @@
+[
+  {
+    "title": "",
+    "list": [
+      {
+        "path": "/home",
+        "name": "Home",
+        "icon":"home"
+      },
+      {
+        "path": "/select",
+        "name": "Select",
+        "icon":"select"
+      },
+      {
+        "path": "/about",
+        "name": "About",
+        "icon":"about"
+      }
+    ]
+  }
+]

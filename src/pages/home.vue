@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <h3>{{ msg }}</h3>
+    <mt-cell>{{ msg }}</mt-cell>
     <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded">
-      <ul>
-        <li v-for="article in articles">
-
-          <div class="m-img inl-block"><img v-lazy=article.images.small /></div>
-          <div class="m-content inl-block">
-            <div>{{article.title}}</div>
-            <div>年份：{{article.year}}</div>
-            <div>类型：{{article.subtype}}</div>
+      <div class="member-list" >
+        <div class="single-member effect-2"  v-for="article in articles">
+          <div class="member-image">
+            <img src="../assets/member_270x210.jpg" v-lazy=article.images.large  alt="Member">
           </div>
-        </li>
-      </ul>
+          <div class="member-info">
+            <h3>{{article.title}}</h3>
+            <h5>类型：{{article.subtype}} / 年份：{{article.year}}</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="social-touch">
+              <a class="fb-touch" href="#"></a>
+              <a class="tweet-touch" href="#"></a>
+              <a class="linkedin-touch" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </mt-loadmore>
   </div>
 </template>
@@ -31,7 +37,7 @@
       };
     },
     created: function () {  // 这里mounted和created生命周期函数区别
-      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=250', {}, {
+      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
         headers: {},
         emulateJSON: true
       }).then(function (response) {
@@ -62,32 +68,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-ul li{
-border-bottom: 1px solid #999;
-padding: 10px 0;
-}
-
-.inl-block{
-display: inline-block;
-}
-
-.m-img{
-
-}
-.m-content{
-margin-left: 20px;
-}
 
 image[lazy=loading] {
   width: 40px;
   height: 300px;
   margin: auto;
 }
-
+ @import '../assets/css/member-card.css';
 
 </style>

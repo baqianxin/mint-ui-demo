@@ -11,6 +11,23 @@
           <span>{{ item.name }}</span>
         </div>
       </mt-cell>
+      <div class="member-list" >
+        <div class="single-member effect-2"  v-for="item in group.list">
+          <div class="member-image">
+            <img src="./assets/member_270x210.jpg" alt="Member">
+          </div>
+          <div class="member-info">
+            <h3>Sophia</h3>
+            <h5>ShowGilr</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="social-touch">
+              <a class="fb-touch" href="#"></a>
+              <a class="tweet-touch" href="#"></a>
+              <a class="linkedin-touch" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -19,6 +36,9 @@
   .page-demo {
     padding-bottom: 50px;
 
+    .member-info {
+      text-align:center;
+    }
     .indexicon {
       font-size: 22px;
       color: #26a2ff;
@@ -48,6 +68,7 @@
       margin-bottom: 15px;
     }
   }
+ @import './assets/css/member-card.css';
 </style>
 
 <script type="text/babel">
