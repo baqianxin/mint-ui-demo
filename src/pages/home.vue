@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <mt-cell>{{ msg }}</mt-cell>
+    <mt-cell class="sss" fixed >{{ msg }}</mt-cell>
     <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded">
       <div class="member-list" >
         <div class="single-member effect-2"  v-for="article in articles">
@@ -38,7 +38,7 @@
     },
     created: function () {  // 这里mounted和created生命周期函数区别
       Indicator.open('加载中...');
-      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
+      this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=250', {}, {
         headers: {},
         emulateJSON: true
       }).then(function (response) {

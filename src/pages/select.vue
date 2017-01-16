@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <mt-cell>{{ msg }}</mt-cell>
-    <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded">
+    <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :autoFill=true :bottom-all-loaded="allLoaded" ref="loadmore">
       <div class="member-list" >
         <div class="single-member effect-2"  v-for="product in articles">
           <div class="member-image">
@@ -25,46 +25,67 @@
 
 <script type="text/babel">
   import { Toast, Indicator } from 'mint-ui';
+
+  function requestData(Vuethis){
+    Indicator.open('加载中...');
+    Vuethis.$http.jsonp('http://m.tech/index.php?r=knewone/list&page='+Vuethis.page, {
+      type: "sydata"
+    }, {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      emulateJSON: true
+    }).then(function(response){
+      // 响应成功回调
+      Indicator.close();
+      Vuethis.refreshData(response.data);
+    }, function(response){
+      // 响应错误回调
+      Indicator.close();
+    });
+  }
   // mounted 钩子函数  这里去请求豆瓣数据
   export default {
     name: 'home',
     data () {
       return {
         msg: '精选列表',
-        allLoaded: true,
+        page: 0,
+        allLoaded: false,
         articles: []
       };
     },
     created: function () {
-      Indicator.open('加载中...');
-      this.$http.jsonp('http://m.tech/index.php?r=knewone/list&page=0', {
-        type: "sydata"
-      }, {
-        headers: {
-          "X-Requested-With": "XMLHttpRequest"
-        },
-        emulateJSON: true
-      }).then(function(response){
-        // 响应成功回调
-        console.log(response);
-        this.articles=response.data.data;
-        Indicator.close();
-      }, function(response){
-        // 响应错误回调
-        Indicator.close();
-      });
+      requestData(this);
     },
     methods: {
       loadTop () {
-        Toast('loadTop');
+        this.page=0;
+        requestData(this);
       },
 
       loadBottom () {
-        Toast('loadBottom');
+        requestData(this);
       },
-
-      allLoaded () {
-        Toast('allLoaded');
+      refreshData(data){
+        if (data.pageCount<this.page){
+          Toast({
+            message: '没有更多数据了',
+            position: 'bottom'
+          });
+          return false;
+        }
+        if (this.page===0) {
+          this.articles = Array.from(data.data);
+          this.$refs.loadmore.onTopLoaded();
+        } else {
+          this.articles = this.articles.concat(Array.from(data.data));
+        }
+        Toast({
+          message: '请求成功',
+          position: 'bottom'
+        });
+        this.page=this.page+1;
       }
     }
   };
