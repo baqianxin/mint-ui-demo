@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    <mt-cell>{{ msg }}</mt-cell>
+    <mt-header :title=msg >
+      <router-link to="/" slot="left">
+        <mt-button icon="back">返回</mt-button>
+      </router-link>
+      <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
     <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :autoFill=true :bottom-all-loaded="allLoaded" ref="loadmore">
       <div class="member-list" >
         <div class="single-member effect-2"  v-for="product in articles">
