@@ -1,5 +1,6 @@
 <template>
   <section class="page-demo">
+    <mt-header :title=header fixed></mt-header>
     <div v-for="group in navs">
       <div class="page-title" v-text="group.title"></div>
       <mt-cell
@@ -17,9 +18,9 @@
             <img src="./assets/member_270x210.jpg" alt="Member">
           </div>
           <div class="member-info">
-            <h3>Sophia</h3>
-            <h5>ShowGilr</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3>{{ item.name }}</h3>
+            <h5>{{ item.name }}-{{ item.name }}-{{ item.name }}</h5>
+            <p>DDDD---DDDD--oomcc</p>
             <div class="social-touch">
               <a class="fb-touch" href="#"></a>
               <a class="tweet-touch" href="#"></a>
@@ -32,9 +33,27 @@
   </section>
 </template>
 
+<script type="text/babel">
+  import { navs } from './route';
+
+  export default {
+    data() {
+      return {
+        header: 'Oom-vue',
+        navs: []
+      };
+    },
+
+    created() {
+      this.navs = navs;
+    }
+  };
+</script>
+
 <style>
   .page-demo {
     padding-bottom: 50px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
 
     .member-info {
       text-align:center;
@@ -70,19 +89,3 @@
   }
  @import './assets/css/member-card.css';
 </style>
-
-<script type="text/babel">
-  import { navs } from './route';
-
-  export default {
-    data() {
-      return {
-        navs: []
-      };
-    },
-
-    created() {
-      this.navs = navs;
-    }
-  };
-</script>

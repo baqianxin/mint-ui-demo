@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <mt-header :title=msg >
+    <mt-header :title=msg class="red" fixed>
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>

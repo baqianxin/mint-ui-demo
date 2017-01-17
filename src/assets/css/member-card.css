@@ -1,9 +1,19 @@
 body {
   font-family: Lato, 'Open Sans', sans-sarif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 16px;
   background-color: rgba(232, 232, 232, 1.0);
+  padding-top: 48px;
 }
 
+.mint-header{
+  background: #fff;
+  color: #1F1F1F;
+  height: 48px;
+}
+.mint-header .mint-header-title{
+  font-size: 1.1rem;
+}
 * {
   margin: 0;
   padding: 0;

@@ -1,0 +1,20 @@
+{
+  "name": "Oom-cc",
+  "description": "oom-cc's Vue+Webpack+Mint-ui",
+  "main": "",
+  "authors": [
+    "oom"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/baqianxin/baqianxin",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "AniJS": "anijs#^0.9.3"
+  }
+}
