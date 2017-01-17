@@ -21,7 +21,7 @@
             <h3>{{ item.name }}</h3>
             <h5>{{ item.name }}-{{ item.name }}-{{ item.name }}</h5>
             <p>DDDD---DDDD--oomcc</p>
-            <div class="social-touch">
+            <div class="">
               <a class="fb-touch" href="#"></a>
               <a class="tweet-touch" href="#"></a>
               <a class="linkedin-touch" href="#"></a>

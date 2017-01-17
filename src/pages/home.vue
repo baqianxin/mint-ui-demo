@@ -8,7 +8,7 @@
     </mt-header>
     <mt-loadmore :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded">
       <div class="member-list" >
-        <div class="single-member effect-2"  v-for="article in articles">
+        <div class="single-member effect-2"  v-for="article in articles" v-on:click="showDescrip($event)">
           <div class="member-image">
             <img src="../assets/member_270x210.jpg" v-lazy=article.images.large  alt="Member">
           </div>
@@ -69,6 +69,13 @@
 
       allLoaded () {
         Toast('allLoaded');
+      },
+      showDescrip ($event) {
+        console.log($event);
+        Toast({
+          message: 'Click触发',
+          iconClass: 'mintui mintui-success'
+        });
       }
     }
   };

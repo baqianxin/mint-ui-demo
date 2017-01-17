@@ -5,6 +5,9 @@
 ## Build Setup
 
 ``` bash
+# install libs
+bower install
+
 # install dependencies
 npm install
 
