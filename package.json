@@ -1,7 +1,7 @@
 {
   "name": "vue-webpack-dev",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "oom-cc's Vue+Webpack+Mint-ui",
   "author": "oom",
   "private": true,
   "scripts": {

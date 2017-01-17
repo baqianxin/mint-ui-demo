@@ -1,6 +1,6 @@
-# vue-webpack-dev
+# Oom-cc
 
-> A Vue.js project
+> oom-cc's Vue+Webpack+Mint-ui
 
 ## Build Setup
 
