@@ -16,6 +16,11 @@
         "path": "/about",
         "name": "About",
         "icon":"about"
+      },
+      {
+        "path": "/popup",
+        "name": "Popup",
+        "icon":"popup"
       }
     ]
   }
