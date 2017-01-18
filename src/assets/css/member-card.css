@@ -201,10 +201,10 @@ p {
   transition: 0.4s;
 }
 
-.effect-2:hover .member-image {
-  height: 81px;
-  transition: 0.4s;
-}
+/*.effect-2:hover .member-image {*/
+  /*height: 81px;*/
+  /*transition: 0.4s;*/
+/*}*/
 
 /*= effect-2 css end =*/
 
