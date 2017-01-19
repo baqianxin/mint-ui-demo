@@ -88,7 +88,7 @@ image[lazy=loading] {
 </style>
 
 <script type="text/babel">
-  import {Toast, Indicator, MessageBox} from 'mint-ui';
+  import {Toast, Indicator} from 'mint-ui';
 
   // mounted 钩子函数  这里去请求豆瓣数据
   export default {
@@ -116,7 +116,7 @@ image[lazy=loading] {
         this.requestData();
       },
       showDescrip ($event, index) {
-        MessageBox.alert('操作成功!', '提示');
+        // MessageBox.alert('操作成功!', '提示');
         if (index === '') {
           this.showModel = false;
           return false;
