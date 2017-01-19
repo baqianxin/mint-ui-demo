@@ -30,15 +30,22 @@
         </div>
       </div>
     </mt-loadmore>
-    <div class="model-wrap" v-show=showModel v-if=showModel v-on:click="showDescrip($event,'')" >
-      <div class="demo"  data-anijs="if: click, on: .tab, do: $addClass open primary-color, to: modal">
-        <div class="single-member effect-3" v-on:click="overView()">
-          <div class="member-image">
-            <img src="../assets/member_270x210.jpg" v-lazy=current_articles.images.large  alt="Member">
+    <div v-show=showModel v-if=showModel>
+      <div class="mint-msgbox-wrapper" style="position: absolute; z-index: 2013;">
+        <div class="mint-msgbox">
+          <div class="mint-msgbox-content">
+              <div class="member-image">
+                  <img :src=current_articles.images.large  alt="Member">
+              </div>
           </div>
-        </div>
+            <div class="mint-msgbox-btns">
+                  <button class="mint-msgbox-btn mint-msgbox-cancel " style="display: none;">取消</button>
+                  <button class="mint-msgbox-btn mint-msgbox-confirm "  v-on:click="showDescrip($event,'')">确定</button>
+              </div>
+          </div>
       </div>
-    </div>
+      <div class="v-modal"  v-on:click="showDescrip($event,'')"></div>
+      </div>
   </div>
 </template>
 
@@ -89,7 +96,6 @@ image[lazy=loading] {
 
 <script type="text/babel">
   import {Toast, Indicator} from 'mint-ui';
-
   // mounted 钩子函数  这里去请求豆瓣数据
   export default {
     name: 'home',
